@@ -1,0 +1,38 @@
+body {
+    background-color: #FCF5C7;
+    color: black;
+    font-family: "Cute Font", sans-serif;
+    text-align: center;
+}
+h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+h2 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+.button a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.yes {
+    background-color: lightgreen;
+}
+.no {
+    background-color: red;
+    position: absolute;
+}

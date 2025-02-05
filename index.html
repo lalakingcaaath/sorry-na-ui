@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <title>Sorry Na</title>
+    <style>
+        body {
+            background-color: #FCF5C7;
+            color: black;
+            font-family: "Cute Font", sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            margin: 0;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: black;
+            padding: 1rem 3rem;
+            border-radius: 1rem;
+            font-size: 2rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .yes {
+            background-color: lightgreen;
+        }
+
+        .no {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="cute">
+        <img src="poking.webp" alt="poking">
+    </div>
+    <h1>Sorry na :(</h1>
+    <h2>Will you forgive me?</h2>
+    <div class="button">
+        <a href="yes.html" class="yes" id="yes">Yes</a>
+        <a href="#" class="no" id="no">No</a>
+    </div>
+
+    <script>
+        let noClickCount = 0;
+        const noButton = document.getElementById("no");
+        const yesButton = document.getElementById("yes");
+
+        noButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            noClickCount++;
+
+            if (noClickCount >= 7) {
+                noButton.style.display = "none";
+                return;
+            }
+
+            // Make the Yes button bigger
+            let yesSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (yesSize * 1.2) + "px";
+            yesButton.style.padding = "1.5rem 4rem";
+
+            // Move and shrink the No button
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 150);
+            noButton.style.position = "absolute";
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+
+            let noSize = parseFloat(window.getComputedStyle(noButton).fontSize);
+            noButton.style.fontSize = (noSize * 0.8) + "px";
+            noButton.style.padding = "0.5rem 2rem";
+        });
+    </script>
+</body>
+</html>
