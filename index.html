@@ -25,6 +25,10 @@
             margin: 0;
         }
 
+        .cute img {
+            width: 30%; /* Default for desktop */
+        }
+
         .button {
             display: flex;
             justify-content: center;
@@ -48,6 +52,20 @@
 
         .no {
             background-color: red;
+        }
+
+        /* Media Query for tablets */
+        @media (max-width: 1024px) {
+            .cute img {
+                width: 50%;
+            }
+        }
+
+        /* Media Query for mobile */
+        @media (max-width: 768px) {
+            .cute img {
+                width: 70%;
+            }
         }
     </style>
 </head>
